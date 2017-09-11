@@ -1,22 +1,22 @@
 //Show navigation
-$('.hamburger').click(function () {
-	$('.navigation').addClass('show-menu');
+$('.hamburger').click(function() {
+    $('.navigation').addClass('show-menu');
 });
 //Hide navigation
-$('.hide-nav').click(function () {
-	$('.navigation').removeClass('show-menu');
+$('.hide-nav').click(function() {
+    $('.navigation').removeClass('show-menu');
 });
 
 //Hide navigation when link is clicked
 $('.navigation a').click(function() {
-	$('.navigation').removeClass('show-menu');
+    $('.navigation').removeClass('show-menu');
 });
 
 //Add class hovered for evry li when the point is hovered
-$('svg').mouseenter(function(){
-	$(this).parent().addClass('hovered');
+$('svg').mouseenter(function() {
+    $(this).parent().addClass('hovered');
 }).mouseleave(function() {
-	$(this).parent().removeClass('hovered');
+    $(this).parent().removeClass('hovered');
 });
 
 //Efect show at scroll
@@ -39,93 +39,123 @@ function initMap() {
         zoom: 18,
         center: uluru,
         styles: [
-            {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
-            {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
-            {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+            { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
+            { elementType: 'labels.text.stroke', stylers: [{ color: '#242f3e' }] },
+            { elementType: 'labels.text.fill', stylers: [{ color: '#746855' }] },
             {
-              featureType: 'administrative.locality',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#d59563'}]
+                featureType: 'administrative.locality',
+                elementType: 'labels.text.fill',
+                stylers: [{ color: '#d59563' }]
             },
             {
-              featureType: 'poi',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#d59563'}]
+                featureType: 'poi',
+                elementType: 'labels.text.fill',
+                stylers: [{ color: '#d59563' }]
             },
             {
-              featureType: 'poi.park',
-              elementType: 'geometry',
-              stylers: [{color: '#263c3f'}]
+                featureType: 'poi.park',
+                elementType: 'geometry',
+                stylers: [{ color: '#263c3f' }]
             },
             {
-              featureType: 'poi.park',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#6b9a76'}]
+                featureType: 'poi.park',
+                elementType: 'labels.text.fill',
+                stylers: [{ color: '#6b9a76' }]
             },
             {
-              featureType: 'road',
-              elementType: 'geometry',
-              stylers: [{color: '#38414e'}]
+                featureType: 'road',
+                elementType: 'geometry',
+                stylers: [{ color: '#38414e' }]
             },
             {
-              featureType: 'road',
-              elementType: 'geometry.stroke',
-              stylers: [{color: '#212a37'}]
+                featureType: 'road',
+                elementType: 'geometry.stroke',
+                stylers: [{ color: '#212a37' }]
             },
             {
-              featureType: 'road',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#9ca5b3'}]
+                featureType: 'road',
+                elementType: 'labels.text.fill',
+                stylers: [{ color: '#9ca5b3' }]
             },
             {
-              featureType: 'road.highway',
-              elementType: 'geometry',
-              stylers: [{color: '#746855'}]
+                featureType: 'road.highway',
+                elementType: 'geometry',
+                stylers: [{ color: '#746855' }]
             },
             {
-              featureType: 'road.highway',
-              elementType: 'geometry.stroke',
-              stylers: [{color: '#1f2835'}]
+                featureType: 'road.highway',
+                elementType: 'geometry.stroke',
+                stylers: [{ color: '#1f2835' }]
             },
             {
-              featureType: 'road.highway',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#f3d19c'}]
+                featureType: 'road.highway',
+                elementType: 'labels.text.fill',
+                stylers: [{ color: '#f3d19c' }]
             },
             {
-              featureType: 'transit',
-              elementType: 'geometry',
-              stylers: [{color: '#2f3948'}]
+                featureType: 'transit',
+                elementType: 'geometry',
+                stylers: [{ color: '#2f3948' }]
             },
             {
-              featureType: 'transit.station',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#d59563'}]
+                featureType: 'transit.station',
+                elementType: 'labels.text.fill',
+                stylers: [{ color: '#d59563' }]
             },
             {
-              featureType: 'water',
-              elementType: 'geometry',
-              stylers: [{color: '#17263c'}]
+                featureType: 'water',
+                elementType: 'geometry',
+                stylers: [{ color: '#17263c' }]
             },
             {
-              featureType: 'water',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#515c6d'}]
+                featureType: 'water',
+                elementType: 'labels.text.fill',
+                stylers: [{ color: '#515c6d' }]
             },
             {
-              featureType: 'water',
-              elementType: 'labels.text.stroke',
-              stylers: [{color: '#17263c'}]
+                featureType: 'water',
+                elementType: 'labels.text.stroke',
+                stylers: [{ color: '#17263c' }]
             }
-          ]
+        ]
 
     });
     var marker = new google.maps.Marker({
         position: uluru,
         map: map
     });
-} 
+}
 
 //Check payment
 
 var myStore = new Commerce('pk_1318523d31bfac7f92ed5764f468d7acffbacbee9ff7c', true);
+
+//contact Form
+var overlay = document.getElementById('request');
+var messageConfirm = document.getElementById('confirm');
+
+overlay.style.display = 'none';
+
+$('contact-form').submit(function(e) {
+    var name = document.getElementById('name');
+    var email = document.getElementById('email');
+    var message = document.getElementById('message');
+
+    if (!name.value || !email.value || !message.value) {
+      messageConfirm.innerHTML = 'Error!';
+      overlay.style.display = 'block';
+
+    } else {
+        $.ajax({
+            url: "https://formspree.io/dmihail1994@gmail.com",
+            method: "POST",
+            data: $(this).serialize(),
+            dataType: "json"
+        });
+        e.preventDefault();
+        messageConfirm.innerHTML = 'Sent!';
+        overlay.style.display = 'block';
+        $(this).get(0).reset();
+
+    }
+});

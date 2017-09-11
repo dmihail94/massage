@@ -559,6 +559,12 @@ input[type="submit"] {
   border-radius: 5px;
   font-weight: 800; }
 
+.sent {
+  color: green; }
+
+.not-sent {
+  color: red; }
+
 @media (min-width: 770px) {
   .videos {
     display: flex;
