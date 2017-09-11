@@ -155,3 +155,17 @@ $('#contact-form').submit(function(e) {
 
     }
 });
+
+//Fixed nav at scroll
+
+$(window).scroll(function() {
+  var height = $(window).scrollTop();
+  if(height >= 150 && height < 250) {
+    $('#nav').addClass('opacity');
+  } else if(height >= 250){
+    $('#nav').addClass('fixed-nav');
+  } else {
+    $('#nav').removeClass('fixed-nav');
+    $('#nav').removeClass('opacity');
+  }
+});

@@ -51,3 +51,17 @@ nav {
 .show-menu {
     transform: translate3d(0, 0, 0);
 }
+
+.opacity {
+    opacity: 0;
+}
+
+.fixed-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index:1000;
+    opacity: 1;
+    transition: opacity 0.75s;
+}
