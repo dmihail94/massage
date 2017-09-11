@@ -125,3 +125,7 @@ function initMap() {
         map: map
     });
 } 
+
+//Check payment
+
+var myStore = new Commerce('pk_1318523d31bfac7f92ed5764f468d7acffbacbee9ff7c', true);
