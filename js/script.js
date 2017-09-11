@@ -126,24 +126,20 @@ function initMap() {
     });
 }
 
-//Check payment
-
-var myStore = new Commerce('pk_1318523d31bfac7f92ed5764f468d7acffbacbee9ff7c', true);
-
 //contact Form
-var overlay = document.getElementById('request');
-var messageConfirm = document.getElementById('confirm');
 
-overlay.style.display = 'none';
-
-$('contact-form').submit(function(e) {
+$('#contact-form').submit(function(e) {
     var name = document.getElementById('name');
     var email = document.getElementById('email');
     var message = document.getElementById('message');
 
     if (!name.value || !email.value || !message.value) {
-      messageConfirm.innerHTML = 'Error!';
-      overlay.style.display = 'block';
+         alertify
+                 .alert('Message','Error!Try to fill correctly all inputs!')
+                 .set('closable', false)
+                 
+                 .set('movable', false)
+                 .set({transition:'zoom'}).show();
 
     } else {
         $.ajax({
@@ -153,8 +149,8 @@ $('contact-form').submit(function(e) {
             dataType: "json"
         });
         e.preventDefault();
-        messageConfirm.innerHTML = 'Sent!';
-        overlay.style.display = 'block';
+        alertify.set('notifier','position', 'top-left');
+        alertify.success('Success message');
         $(this).get(0).reset();
 
     }
