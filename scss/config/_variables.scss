@@ -1,0 +1,61 @@
+//Font Stacks
+
+$font-family--primary: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family--secondary: 'Raleway', Helvetica, Arial, sans-serif;
+$font-family--third: 'Encode Sans Condensed', sans-serif;
+
+//Font Weights
+
+$font-weight--light: 300;
+$font-weight--medium: 400;
+$font-weight--bold: 700;
+$font-weight--ultra-bold: 800;
+
+//Base Colors
+
+$white: rgb(243,243,243);
+$black: #0b0b0b;
+$grey: #797e83;
+
+//Main colors
+
+$aqua-blue: rgb(55, 179, 192);
+$dark-blue: #2E3D49;
+$tomato: #F04546;
+$spring-green: rgba(#64cd83, 0.94);
+
+//Color Palette Mod
+
+$palettes: (
+  grey:(
+    xx-light: lighten($grey, 43%),
+    x-light: lighten($grey, 35%),
+    light: lighten($grey, 5%),
+    base: $grey,
+    dark: darken($grey,8%),
+    x-dark: darken($grey, 16%)
+  ),
+  black: (
+    light:lighten($black, 20%),
+    base: $black,
+    dark:darken($black, 10%)
+  )
+
+);
+
+// Text
+
+$base__font-size : 16px;
+$base__line      : 24px;
+$letter-space    : 1px;
+$line-height     : 1.5;
+
+$border-radius: 8px;
+
+$trns-duration: 0.5s;
+
+//Breakpoints
+
+$break-sm: 1px;
+$break-md: 769px;
+$break-lg: 1015px;

@@ -1,0 +1,8 @@
+footer {
+	clear: both;
+	background: white;
+	padding: 20px;
+	@include mq(medium) {
+		margin-top: 40px;
+	}
+}

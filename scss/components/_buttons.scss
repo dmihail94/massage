@@ -1,0 +1,22 @@
+.hamburger {
+	@extend %btn;
+	font-size:em(22px);
+	color:white;
+
+	@include mq(medium) {
+		display: none;
+	}
+}
+
+.hide-nav {
+	@extend %btn;
+	position: absolute;
+	top:20px;
+	right:20px;
+	font-size: em(24px);
+	color: $tomato;
+
+	@include mq(medium) {
+		display: none;
+	}
+}

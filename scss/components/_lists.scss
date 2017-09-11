@@ -1,0 +1,61 @@
+h1.title-section {
+		@extend %headl-primary;
+		border-bottom: 1px solid palette(grey,xx-light);
+		text-align: center;
+		font-weight: $font-weight--medium;
+		padding: 10px 0;
+		width: 100%;
+	}
+
+	.timeline {
+		margin: 20px auto;
+
+		li {
+			width: 80%;
+			margin: 20px auto;
+			position: relative;
+			transition: all 0.75s;
+		}
+	}
+
+	.period,.post,.company-name,.description,.degree,.school {
+		margin: 15px 0;
+	}
+
+	.period {
+		font-size: em(20px);
+		font-weight: $font-weight--bold;
+
+		&::before {
+			content:"\2022";
+			margin-right: 10px;
+		}
+	}
+
+	.post {
+		font-size: em(16px);
+	}
+
+	.company-name {
+		font-size: em(18px);
+	}
+
+	.description {
+		line-height: 1.4;
+	}
+
+	.period, {
+		@include mq(medium) {
+			position: absolute;
+			top: -15px;
+			left: -50%;
+		}
+	}
+
+	.post {
+		@include mq(medium) {
+			position: absolute;
+			top:10px;
+			left: -45%;
+		}
+	}

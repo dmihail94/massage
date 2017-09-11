@@ -1,0 +1,19 @@
+.header-features {
+	width: 100%;
+	color: #292929;
+	text-align: center;
+	padding: 10px 0;
+	font-size: em(20px);
+	font-weight: $font-weight--medium;
+
+	a {
+		text-decoration: underline;
+		font-size: em(22px,18px);
+		display: inline;
+		color: darken($aqua-blue,15%);
+
+		&:hover {
+			color:rgba(0,0,0,0.8);
+		}
+	}
+}

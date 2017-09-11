@@ -1,0 +1,183 @@
+//About
+.about {
+    text-align: center;
+    padding: 30px 10px 60px;
+
+    p {
+        @extend %paragraf;
+    }
+    @include mq(medium) {
+        p,
+        h1.hello {
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+h1.hello {
+    @extend %headl-primary;
+    margin: 20px 0;
+    font-weight: $font-weight--medium;
+}
+
+//Details
+.details {
+    position: relative;
+    background-image: url('../img/3.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    color: $white;
+    text-align: center;
+    padding: 100px 0 40px 0;
+    @include mq(small) {
+        padding-top: 20px;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), transparent), url('../img/3.jpg');
+        background-size: cover;
+    }
+
+    h1 {
+        @extend %headl-primary;
+        margin-bottom: 150px;
+        font-weight: $font-weight--medium;
+        font-size: em(50px);
+
+        @include mq(medium) {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: em(90px);
+            font-weight: $font-weight--light;
+        }
+
+        @include mq(large) {
+            font-size: em(130px);
+        }
+    }
+    h2 {
+        @extend %headl-secondary;
+        margin-top: 50px;
+    }
+}
+
+//Experience,Education
+.experience,
+.education {
+    font-family: $font-family--third;
+    letter-spacing: 1.7px;
+    background: white;
+    padding-bottom: 20px;
+    border-top: 2px solid palette(grey, xx-light);
+    clear: both;
+
+    @include mq(large) {
+        margin-bottom: -40px;
+    }
+
+    .line {
+        display: none;
+        height: 650px;
+        margin-top: 25px;
+        border-color: palette(grey, xx-light);
+        @include mq(medium) {
+            display: block;
+            margin-right: -3.25%;
+        }
+        @include mq(large) {
+            margin-right: 0;
+        }
+    }
+
+    ul {
+        @include mq(medium) {
+            @include flex();
+
+            .list {
+                width: 50%;
+            }
+        }
+    }
+    svg {
+        display: none;
+        fill: palette(grey, x-light);
+        top: -90px;
+        left: -109%;
+        transition: all 0.75s;
+
+        @include mq(large) {
+            top: -45px;
+            left: -125%;
+        }
+
+        &:hover {
+            transform: scale(1.5);
+        }
+
+        @include mq(medium) {
+            display: block;
+        }
+    }
+
+}
+
+//Education
+.education {
+    .line {
+        height: 750px;
+        margin-top: 25px;
+    }
+
+    svg {
+        @include mq(medium) {
+            top: -120px;
+        }
+        @include mq(large) {
+            top: -75px;
+        }
+        
+    }
+}
+
+//Line
+.line {
+    border-right: 1px solid white;
+    width: 50%;
+    height: 150px;
+}
+
+.hovered {
+	background:	palette(grey,xx-light);
+	padding: 0 5px;
+	border-radius: 10px;
+	color: rgb(24, 33, 83);
+}
+
+//Contact
+
+#contact {
+    background: white;
+    border-top: 2px solid palette(grey, xx-light);
+    clear: both;
+
+    @include mq(medium) {
+        form {
+            width: 50%;
+            float: left;
+        }
+    }
+
+    #map {
+        width: 100%;
+        height: 400px;
+
+        @include mq(medium) {
+            width: 50%;
+            float: right;
+            height: 560px;
+        }
+    }
+	
+}

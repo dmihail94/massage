@@ -1,0 +1,58 @@
+form {
+	margin: 40px auto;
+}
+
+input,
+textarea {
+	width: 90%;
+	margin: 15px auto;
+	display: block;
+	border: none;
+	background: #e6e6e6;
+    border-radius: 5px;
+    font-size: 1.5em;
+    padding: 5px;
+
+    &:focus {
+
+        background: white;
+        border: 2px solid dodgerblue;
+        transition: 0.3s all ease-in;
+    }
+
+    &:focus {
+    	outline: none;
+    }
+}
+
+input {
+    height: 50px;
+
+    &[placeholder] {
+    	color: rgba(0,0,0,0.6);
+    }
+}
+
+label {
+    font-size: 1.4em;
+    color: rgba(0, 0, 0, 0.7);
+    margin: 10px 0 10px 5%;
+}
+
+textarea {
+    height: 200px;
+    resize:  none;
+}
+
+input[type="submit"] {
+    width: 90%;
+    height: 60px;
+    font-size: 1.6em;
+    text-align: center;
+    background: #2eb8b8;
+    color: white;
+    margin: 0 auto;
+    border: none;
+    border-radius: 5px;
+    font-weight: 800;
+}

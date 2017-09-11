@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title>Checkout Tutorial (Basic)</title>
+	   <meta charset="utf-8">
+	  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/2.7.2/jquery.serializejson.js"></script>
+	  <script type="text/javascript" src="https://chec-cdn.s3.amazonaws.com/js/commerce.js"></script>
+	  <script>
+	    var myStore = new Commerce('pk_test_1101361e43dd408534afd852d22f128d0b7aab34d59d6', true);
+	  </script>
+	  <style>
+	    @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+	    body { text-align: center; font-family:Open Sans; font-weight:400; font-size: 14px; }
+	    #checkout { display: inline-block; margin:0 auto; text-align: left; }
+	    b { font-weight:600; }
+	    .block {
+	    margin: 25px auto;
+	    }
+	    .row { margin: 5px auto; text-align: left; }
+	    input, select { margin: 5px 0px; }
+	
+	    button { font-size: 16px; padding: 15px 25px;}
+	  </style>
+	</head>
+	<body>
+	
+	  <h1>Commerce.js Checkout (Basic) Example</h1>
+	
+	<form id="checkout">
+	
+	  <div id="cart">
+	    <div class="row">
+	    <h2>Test Product (Basic) - $49.99</h2>
+	    Quantity: <input name="line_items[item_7RyWOwmK5nEa2V][quantity]" type="number" value="1">
+	    </div>
+	  </div>
+	
+	  <div id="extrafields" class="row">
+	    <h3>Extrafields</h3>
+	  </div>
+	
+	  <div id="customer" class="block">
+	
+	    <h3>Customer Details</h3>
+	
+	    <div class="row">
+	
+	      <b>First Name:</b>
+	
+	      <input type="text" name="customer[firstname]" value="" placeholder="First Name">
+	
+	
+	    </div>
+	
+	
+	    <div class="row">
+	
+	      <b>Last Name:</b>
+	
+	      <input type="text" name="customer[lastname]" value="" placeholder="Last Name">
+	
+	
+	    </div>
+	
+	
+	    <div class="row">
+	
+	      <b>Email:</b>
+	
+	      <input type="text" name="customer[email]" value="" placeholder="Email">
+	
+	
+	    </div>
+	
+	  </div>
+	
+	  <div id="payment" class="block">
+	
+	    <h3>Payment</h3>
+	
+	    <div class="row">
+	      <input type="radio" name="payment[gateway]" value="test_gateway" checked> Test Gateway
+	    </div>
+	    <hr>
+	    <div class="row">
+	      <b>Card Number:</b>
+	      <input type="text" name="payment[card][number]" value="4242 4242 4242 4242" placeholder="Card Number">
+	    </div>
+	    <div class="row">
+	      <b>Expiry Month:</b>
+	      <input type="text" name="payment[card][expiry_month]" value="01" placeholder="Expiry Month">
+	    </div>
+	
+	    <div class="row">
+	      <b>Expiry Year:</b>
+	      <input type="text" name="payment[card][expiry_year]" value="2021" placeholder="Expiry Year">
+	    </div>
+	
+	    <div class="row">
+	      <b>Security Code (CCV):</b>
+	      <input type="text" name="payment[card][cvc]" value="123" placeholder="Security Code (CCV)">
+	    </div>
+	
+	    <div class="row">
+	      <b>Billing Postal/Zip Code:</b>
+	      <input type="text" name="payment[card][postal_zip_code]" value="94107" placeholder="Billing Postal/Zip Code">
+	    </div>
+	
+	  </div>
+	
+	  <button type="button" onclick="capture();">Buy Now</button>
+	
+	</form>
+	
+	<script defer>
+	
+	$(document).ready(function(){
+	
+	//Create a checkout token for the product with the permalink 'commerce-js-example'.
+	myStore.Checkout.generateToken('commerce-js-basic', 'permalink', function(resp){
+	
+	  //Store the checkout token id as a global variable
+	  checkout_token_id = resp.id;
+	
+	      /*
+	      CREATE EXTRAFIELD <INPUT>'s
+	        ______  __   __  _______   _____               ______   _____   ______   _        _____     _____
+	       |  ____| \ \ / / |__   __| |  __ \      /\     |  ____| |_   _| |  ____| | |      |  __ \   / ____|
+	       | |__     \ V /     | |    | |__) |    /  \    | |__      | |   | |__    | |      | |  | | | (___
+	       |  __|     > <      | |    |  _  /    / /\ \   |  __|     | |   |  __|   | |      | |  | |  \___ \
+	       | |____   / . \     | |    | | \ \   / ____ \  | |       _| |_  | |____  | |____  | |__| |  ____) |
+	       |______| /_/ \_\    |_|    |_|  \_\ /_/    \_\ |_|      |_____| |______| |______| |_____/  |_____/
+	      */
+	
+	        //Loop through each extrafield in this checkout token
+	        $.each(resp.extrafields, function(k, extrafield) {
+	
+	          //Create an <input> for this extrafield with the name in this format extrafield[{EXTRAFIELD_ID}]
+	          var extrafield_html =  extrafield.name + ": <input name=\"extrafields["+extrafield.id+"]\" type=\"text\">";
+	
+	          //Append the new input to the extrafields <div>
+	          $('#extrafields').append(extrafield_html)
+	
+	        });
+	
+	  },
+	  function(error){
+	    console.log(error);
+	  }
+	);
+	});
+	
+	
+	/*
+	The capture function
+	  _____              _____    _______   _    _   _____    ______
+	 / ____|     /\     |  __ \  |__   __| | |  | | |  __ \  |  ____|
+	| |         /  \    | |__) |    | |    | |  | | | |__) | | |__
+	| |        / /\ \   |  ___/     | |    | |  | | |  _  /  |  __|
+	| |____   / ____ \  | |         | |    | |__| | | | \ \  | |____
+	 \_____| /_/    \_\ |_|         |_|     \____/  |_|  \_\ |______|
+	
+	*/
+	
+	function capture(){
+	
+	  //We're using jQuery.serializeJSON (https://github.com/marioizquierdo/jquery.serializeJSON) to convert the form into a json object so we don't have to do any extra formatting
+	  var order = $('#checkout').serializeJSON();
+	
+	  myStore.Checkout.capture(checkout_token_id, order,
+	    function(resp) {
+	        console.log(resp);
+	        alert('Captured! Check the console for the receipt object');
+	    },
+	    function(error) {
+	      console.log(error)
+	      alert('Error! Check the console for more details');
+	    }
+	
+	  );
+	
+	}
+	</script>
+	
+	</body>
+	<html>

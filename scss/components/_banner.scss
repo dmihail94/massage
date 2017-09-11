@@ -1,0 +1,44 @@
+.banner {
+	height: 700px;
+	padding: 40px 10px;
+	text-align: center;
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0.7),#2E3D49),
+					  url('../img/2.JPG');
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	position: relative;
+	@include mq(large) {
+		height: 500px;
+	}
+}
+
+.download-pdf {
+	position: absolute;
+	bottom: 30px;
+	left: 0;
+	right: 0;
+	border: 2px solid $spring-green;
+	color: white;
+	padding: 10px;
+	border-radius: 15px;
+	display: inline;
+	width: 60%;
+	margin: auto;
+	transition: transform 0.75s;
+
+	&:hover {
+		transform: scale(1.1);
+		color: palette(grey,light);
+	}
+	@include mq(medium) {
+		width: 200px;
+	}
+	@include mq(large) {
+		
+		top:30px;
+		margin: 0 auto;
+		height:40px;
+	}
+}

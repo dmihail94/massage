@@ -1,0 +1,28 @@
+.videos {
+	@include mq(medium) {
+		@include flex($wrap:wrap);
+	}
+	li {
+		width: 90%;
+		margin:60px auto;
+		text-align: center;
+		border:2px solid palette(grey,xx-light);
+		padding: 20px;
+		background: white;
+		@include mq(medium) {
+			width: 30%;
+		}
+
+		a {
+			display: inline;
+			background: $spring-green;
+			color: white;
+			border-radius: 5px;
+			padding: 10px;
+			margin: 0 auto;
+		}
+		figure {
+			margin-bottom: 20px;
+		}
+	}
+}

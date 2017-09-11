@@ -1,0 +1,30 @@
+* {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+body {
+	background: $white;
+	font-size: $base__font-size;
+	font-family: $font-family--primary;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+	@extend %headl-primary;
+}
+h2 {
+    @extend %headl-secondary;
+}
+
+h4 {
+    font-size: em(20px);
+}
