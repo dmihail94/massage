@@ -9,6 +9,7 @@
 		border:2px solid palette(grey,xx-light);
 		padding: 20px;
 		background: white;
+		border-radius: 5px;
 		@include mq(medium) {
 			width: 30%;
 		}
