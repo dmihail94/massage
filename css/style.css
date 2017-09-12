@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Encode+Sans+Condensed|Raleway:300,400,700,900|Roboto:300,400,700");
 .hamburger, .hide-nav {
   width: 40px;
   height: 40px;
@@ -548,7 +549,7 @@ textarea {
 input {
   height: 50px; }
   input[placeholder] {
-    color: rgba(0, 0, 0, 0.6); }
+    color: #3F3F3F; }
 
 label {
   font-size: 1.4em;

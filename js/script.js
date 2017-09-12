@@ -139,7 +139,7 @@ $('#contact-form').submit(function(e) {
             title: 'Error!',
             content: 'Fill all inputs correctly!',
             type: 'red',
-            boxWidth: '30%',
+            boxWidth: '60%',
             useBootstrap: false,
             typeAnimated: true,
             buttons: {
@@ -163,7 +163,7 @@ $('#contact-form').submit(function(e) {
             title: 'Success!',
             content: 'Sent!',
             type: 'green',
-            boxWidth: '30%',
+            boxWidth: '60%',
             useBootstrap: false,
             typeAnimated: true,
             buttons: {
