@@ -134,12 +134,22 @@ $('#contact-form').submit(function(e) {
     var message = document.getElementById('message');
 
     if (!name.value || !email.value || !message.value) {
-         alertify
-                 .alert('Message','Error!Try to fill correctly all inputs!')
-                 .set('closable', false)
-                 
-                 .set('movable', false)
-                 .set({transition:'zoom'}).show();
+        e.preventDefault();
+        $.alert({
+            title: 'Error!',
+            content: 'Fill all inputs correctly!',
+            type: 'red',
+            boxWidth: '30%',
+            useBootstrap: false,
+            typeAnimated: true,
+            buttons: {
+                tryAgain: {
+                    text: 'Try again',
+                    btnClass: 'btn-red'
+
+                }
+            }
+        });
 
     } else {
         $.ajax({
@@ -149,8 +159,21 @@ $('#contact-form').submit(function(e) {
             dataType: "json"
         });
         e.preventDefault();
-        alertify.set('notifier','position', 'top-left');
-        alertify.success('Success message');
+        $.alert({
+            title: 'Success!',
+            content: 'Sent!',
+            type: 'green',
+            boxWidth: '30%',
+            useBootstrap: false,
+            typeAnimated: true,
+            buttons: {
+                tryAgain: {
+                    text: 'Close',
+                    btnClass: 'btn-green'
+
+                }
+            }
+        });
         $(this).get(0).reset();
 
     }
@@ -159,13 +182,13 @@ $('#contact-form').submit(function(e) {
 //Fixed nav at scroll
 
 $(window).scroll(function() {
-  var height = $(window).scrollTop();
-  if(height >= 150 && height < 250) {
-    $('#nav').addClass('opacity');
-  } else if(height >= 250){
-    $('#nav').addClass('fixed-nav');
-  } else {
-    $('#nav').removeClass('fixed-nav');
-    $('#nav').removeClass('opacity');
-  }
+    var height = $(window).scrollTop();
+    if (height >= 150 && height < 250) {
+        $('#nav').addClass('opacity');
+    } else if (height >= 250) {
+        $('#nav').addClass('fixed-nav');
+    } else {
+        $('#nav').removeClass('fixed-nav');
+        $('#nav').removeClass('opacity');
+    }
 });

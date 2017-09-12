@@ -195,7 +195,7 @@ nav {
   height: 700px;
   padding: 40px 10px;
   text-align: center;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), #2E3D49), url("../img/2.JPG");
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), #2E3D49), url("../img/2-min.JPG");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -297,7 +297,7 @@ img {
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: center center;
-  background-image: url("../img/1.jpeg"); }
+  background-image: url("../img/1-min.jpeg"); }
   @media (min-width: 770px) {
     .photo {
       width: 50%;
