@@ -200,3 +200,7 @@ $('.change-lang').click(function() {
     $('i.fa').toggleClass('up_arrow');
 });
 
+$(function() {
+    $('.loader').css('display','none');
+});
+
