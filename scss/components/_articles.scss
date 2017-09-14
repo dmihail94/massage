@@ -5,6 +5,7 @@
 
     p {
         @extend %paragraf;
+        margin-top: 5px;
     }
     @include mq(medium) {
         p,
@@ -18,7 +19,7 @@
 
 h1.hello {
     @extend %headl-primary;
-    margin: 20px 0;
+    margin: 10px 0 10px;
     font-weight: $font-weight--medium;
 }
 
@@ -67,7 +68,7 @@ h1.hello {
 .experience,
 .education {
     font-family: $font-family--third;
-    letter-spacing: 1.7px;
+    letter-spacing: 1.5px;
     background: white;
     padding-bottom: 20px;
     border-top: 2px solid palette(grey, xx-light);

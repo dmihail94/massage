@@ -192,3 +192,11 @@ $(window).scroll(function() {
         $('#nav').removeClass('opacity');
     }
 });
+
+//Show languages
+
+$('#lang').click(function() {
+    $('.language').toggle('fast');
+    $('i.fa').toggleClass('up_arrow');
+});
+

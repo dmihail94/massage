@@ -1,8 +1,59 @@
 footer {
+	@include flex();
 	clear: both;
-	background: white;
+	background: palette(black,light);
 	padding: 20px;
+	color: $white;
 	@include mq(medium) {
 		margin-top: 40px;
 	}
+}
+
+#lang {
+	background: none;
+	border: none;
+	color: white;
+	cursor: pointer;
+	font-size: 15px;
+
+	img {
+		margin-bottom: -3px;
+	}
+
+	i.fa {
+		margin-left: 25px;
+		font-size: 15px;
+		transition: transform .5s ease;
+	}
+}
+
+.lang {
+	width: 200px;
+	position: relative;
+	margin-left: auto;
+
+	img {
+		width: 15px;
+		height: 15px;
+		margin-right: 10px;
+	}
+}
+
+.language {
+	background: white;
+	color: palette(black,light);
+	display: none;
+	padding: 10px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: -550%;
+
+	li {
+		margin: 10px;
+	}
+}
+
+.up_arrow{
+    transform:rotate(-180deg);
 }

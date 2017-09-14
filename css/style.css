@@ -114,12 +114,51 @@ svg {
   fill-opacity: 1; }
 
 footer {
+  display: flex;
   clear: both;
-  background: white;
-  padding: 20px; }
+  background: #3e3e3e;
+  padding: 20px;
+  color: #f3f3f3; }
   @media (min-width: 770px) {
     footer {
       margin-top: 40px; } }
+
+#lang {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 15px; }
+  #lang img {
+    margin-bottom: -3px; }
+  #lang i.fa {
+    margin-left: 25px;
+    font-size: 15px;
+    transition: transform .5s ease; }
+
+.lang {
+  width: 200px;
+  position: relative;
+  margin-left: auto; }
+  .lang img {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px; }
+
+.language {
+  background: white;
+  color: #3e3e3e;
+  display: none;
+  padding: 10px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -550%; }
+  .language li {
+    margin: 10px; }
+
+.up_arrow {
+  transform: rotate(-180deg); }
 
 nav {
   background-image: linear-gradient(to left, #14C4BC 10%, #9F83CC);
@@ -389,6 +428,8 @@ h1.title-section {
 .about {
   text-align: center;
   padding: 30px 10px 60px; }
+  .about p {
+    margin-top: 5px; }
   @media (min-width: 770px) {
     .about p,
     .about h1.hello {
@@ -397,7 +438,7 @@ h1.title-section {
       margin-right: auto; } }
 
 h1.hello {
-  margin: 20px 0;
+  margin: 10px 0 10px;
   font-weight: 400; }
 
 .details {
@@ -435,7 +476,7 @@ h1.hello {
 .experience,
 .education {
   font-family: "Encode Sans Condensed", sans-serif;
-  letter-spacing: 1.7px;
+  letter-spacing: 1.5px;
   background: white;
   padding-bottom: 20px;
   border-top: 2px solid #ebecec;
