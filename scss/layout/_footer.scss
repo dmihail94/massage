@@ -16,6 +16,10 @@ footer {
 	cursor: pointer;
 	font-size: 15px;
 
+	&:focus {
+		outline: none;
+	}
+
 
 	img {
 		margin-bottom: -3px;
@@ -37,6 +41,7 @@ footer {
 		width: 15px;
 		height: 15px;
 		margin-right: 10px;
+		margin-bottom: -1px;
 	}
 }
 
@@ -49,6 +54,7 @@ footer {
 	right: 0;
 	top: -620%;
 	border-radius: 5px;
+	width: 100%;
 
 	li {
 		margin: 20px;

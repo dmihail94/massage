@@ -129,6 +129,8 @@ footer {
   color: white;
   cursor: pointer;
   font-size: 15px; }
+  .change-lang:focus {
+    outline: none; }
   .change-lang img {
     margin-bottom: -3px; }
   .change-lang i.fa {
@@ -143,7 +145,8 @@ footer {
   .lang img {
     width: 15px;
     height: 15px;
-    margin-right: 10px; }
+    margin-right: 10px;
+    margin-bottom: -1px; }
 
 .language {
   background: white;
@@ -153,7 +156,8 @@ footer {
   position: absolute;
   right: 0;
   top: -620%;
-  border-radius: 5px; }
+  border-radius: 5px;
+  width: 100%; }
   .language li {
     margin: 20px; }
     .language li a:hover {
