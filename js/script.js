@@ -195,7 +195,7 @@ $(window).scroll(function() {
 
 //Show languages
 
-$('#lang').click(function() {
+$('.change-lang').click(function() {
     $('.language').toggle('fast');
     $('i.fa').toggleClass('up_arrow');
 });

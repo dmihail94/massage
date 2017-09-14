@@ -123,23 +123,23 @@ footer {
     footer {
       margin-top: 40px; } }
 
-#lang {
+.change-lang {
   background: none;
   border: none;
   color: white;
   cursor: pointer;
   font-size: 15px; }
-  #lang img {
+  .change-lang img {
     margin-bottom: -3px; }
-  #lang i.fa {
+  .change-lang i.fa {
     margin-left: 25px;
     font-size: 15px;
     transition: transform .5s ease; }
 
 .lang {
-  width: 200px;
   position: relative;
-  margin-left: auto; }
+  margin-left: auto;
+  margin-right: -10px; }
   .lang img {
     width: 15px;
     height: 15px;
@@ -149,13 +149,15 @@ footer {
   background: white;
   color: #3e3e3e;
   display: none;
-  padding: 10px;
+  padding: 10px 0;
   position: absolute;
-  left: 0;
   right: 0;
-  top: -550%; }
+  top: -620%;
+  border-radius: 5px; }
   .language li {
-    margin: 10px; }
+    margin: 20px; }
+    .language li a:hover {
+      color: rgba(100, 205, 131, 0.94); }
 
 .up_arrow {
   transform: rotate(-180deg); }
