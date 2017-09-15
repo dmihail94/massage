@@ -1,11 +1,57 @@
 footer {
-	@include flex();
+	@include flex($dir:column);
 	clear: both;
 	background: palette(black,light);
-	padding: 20px;
 	color: $white;
+	padding-bottom: 10px;
 	@include mq(medium) {
 		margin-top: 40px;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	p {
+		@include mq(small) {
+			width: 100%;
+			text-align: center;
+			margin: 20px 0;
+		}
+	}
+
+	.wrapper {
+		background: linear-gradient(rgba(0,0,0,0.7),palette(black,light));
+		width: 100%;
+		margin: 0 0 20px;
+		padding: 20px 5px;
+		@include flex($just:center,$dir:column);
+		@include mq(medium) {
+			flex-direction: row;
+			justify-content: space-between;
+			padding:20px;
+		}
+	}
+
+	.socials {
+		background: none;
+		margin: 0 auto;
+		@include mq(medium) {
+			width: 50%;
+			margin-left: 0;
+		}
+	}
+
+	.links {
+		text-align: center;
+		li {
+			display: inline-block;
+			margin: 20px 10px 0;
+
+			a{
+				color: white;
+				display: block;
+				font-size: em(11px);
+			}
+		}
 	}
 }
 
@@ -16,6 +62,12 @@ footer {
 	cursor: pointer;
 	font-size: 15px;
 
+	i.fa {
+		margin-left: 25px;
+		font-size: 15px;
+		transition: transform .5s ease;
+	}
+
 	&:focus {
 		outline: none;
 	}
@@ -25,22 +77,19 @@ footer {
 		margin-bottom: -3px;
 	}
 
-	i.fa {
-		margin-left: 25px;
-		font-size: 15px;
-		transition: transform .5s ease;
-	}
+	
 }
 
 .lang {
 	position: relative;
 	margin-left: auto;
-	margin-right: -10px;
+	margin-right: 0;
 
 	@include mq(small) {
-		width: 200px;
-		text-align: right;
-	}
+			width: 100%;
+			text-align: center;
+			margin: 10px auto;
+		}
 
 	img {
 		width: 15px;

@@ -136,15 +136,15 @@ $('#contact-form').submit(function(e) {
     if (!name.value || !email.value || !message.value) {
         e.preventDefault();
         $.alert({
-            title: 'Error!',
-            content: 'Fill all inputs correctly!',
+            title: 'Errore!',
+            content: 'Riempi tutti gli ingressi correttamente!',
             type: 'red',
             boxWidth: '60%',
             useBootstrap: false,
             typeAnimated: true,
             buttons: {
                 tryAgain: {
-                    text: 'Try again',
+                    text: 'Riprova',
                     btnClass: 'btn-red'
 
                 }
@@ -160,15 +160,15 @@ $('#contact-form').submit(function(e) {
         });
         e.preventDefault();
         $.alert({
-            title: 'Success!',
-            content: 'Sent!',
+            title: 'Successo!',
+            content: 'Inviato!',
             type: 'green',
             boxWidth: '60%',
             useBootstrap: false,
             typeAnimated: true,
             buttons: {
                 tryAgain: {
-                    text: 'Close',
+                    text: 'Chiudi',
                     btnClass: 'btn-green'
 
                 }
